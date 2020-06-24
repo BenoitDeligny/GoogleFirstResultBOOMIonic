@@ -9,21 +9,21 @@ const routes: Routes = [
     children: [
       {
         path: 'ordonnance',
-        loadChildren: () => import('../ordonnance/ordonnance.module').then( m => m.OrdonnancePageModule)
+        loadChildren: () => import('../ordonnance/ordonnance.module').then(m => m.OrdonnancePageModule)
       },
       {
         path: 'home',
-        loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
         path: 'profil',
-        loadChildren: () => import('../profil/profil.module').then( m => m.ProfilPageModule)
+        loadChildren: () => import('../profil/profil.module').then(m => m.ProfilPageModule)
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/Ordonnance',
+    redirectTo: '/tabs/ordonnance',
     pathMatch: 'full'
 
   }
@@ -34,4 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
