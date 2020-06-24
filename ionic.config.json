@@ -1,0 +1,7 @@
+{
+  "name": "GoogleFirstResultBOOMIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
