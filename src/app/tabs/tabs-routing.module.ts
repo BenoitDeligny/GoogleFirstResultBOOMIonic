@@ -25,9 +25,11 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/Ordonnance',
     pathMatch: 'full'
+
   }
 ];
 
+// @ts-ignore
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
