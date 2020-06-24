@@ -25,6 +25,7 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/Ordonnance',
     pathMatch: 'full'
+
   }
 ];
 
