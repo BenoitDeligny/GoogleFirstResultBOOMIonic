@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { OrdonnancePageRoutingModule } from './ordonnance-routing.module';
 
 import { OrdonnancePage } from './ordonnance.page';
+import {HomePageModule} from '../home/home.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OrdonnancePageRoutingModule
+    OrdonnancePageRoutingModule,
+    HomePageModule
   ],
   declarations: [OrdonnancePage]
 })
