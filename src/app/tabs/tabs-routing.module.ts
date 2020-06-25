@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/Ordonnance',
+    redirectTo: '/tabs/ordonnance',
     pathMatch: 'full'
 
   }
