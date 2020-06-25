@@ -1,7 +1,30 @@
 <ion-header>
-  <app-header></app-header>
+  <app-header>
+  </app-header>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-title>Mon ordonnance</ion-card-title>
 
+    <ion-card-subtitle>Délivré par: Dr White</ion-card-subtitle>
+
+    <ion-datetime displayFormat="DD MM YY" disabled value="1994-12-15"></ion-datetime>
+
+    <ion-card-subtitle>Medicament 1</ion-card-subtitle>
+
+    <ion-card-subtitle>Posologie:</ion-card-subtitle>
+    <ion-item>
+      <ion-label>Matin</ion-label>
+      <ion-checkbox color="primary" slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Midi</ion-label>
+      <ion-checkbox color="primary" slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Soir</ion-label>
+      <ion-checkbox color="primary" slot="start"></ion-checkbox>
+    </ion-item>
+  </ion-card>
 </ion-content>
