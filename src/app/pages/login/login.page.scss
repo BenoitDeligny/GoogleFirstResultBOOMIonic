@@ -1,10 +1,30 @@
 .login-header {
     background-color: var(--ion-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-title {
+    color: var(--ion-color-primary-contrast);
+    font-family: 'Satisfy';
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .logo-img {
-    display: block;
-    margin: 0 auto;
     width: 120px;
-    text-align: center;
+}
+
+.login-content {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-button {
+    margin-top: 40px;
 }
