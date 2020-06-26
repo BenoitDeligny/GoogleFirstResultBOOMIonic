@@ -12,14 +12,16 @@ export class HomePage implements OnInit {
 
   userPrescription = [];
   searchedValue: string;
+  statut: string;
 
   constructor(private prescriptionService: OrdonnanceServiceService, private userService: UserServiceService) { }
 
   ngOnInit() {
     this.prescriptionService.getPrescriptions().subscribe(e => {
       this.userPrescription = e;
+      this.userPrescription.reverse();
       console.log(this.userPrescription);
-    });
+      });
 
   }
 

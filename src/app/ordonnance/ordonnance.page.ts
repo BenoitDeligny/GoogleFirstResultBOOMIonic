@@ -22,7 +22,7 @@ export class OrdonnancePage implements OnInit {
       defaults: 1,
       foreground: true,
       title: 'Pense à prendre ta prescription de la journée',
-      trigger: { in: 30, unit: ELocalNotificationTriggerUnit.SECOND }
+      trigger: { in: 15, unit: ELocalNotificationTriggerUnit.SECOND }
   });
 
     this.route.paramMap.subscribe(params => {

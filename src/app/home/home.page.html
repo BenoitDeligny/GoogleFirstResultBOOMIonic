@@ -3,9 +3,10 @@
   <ion-title>Mes ordonnances</ion-title>
 </ion-toolbar>
 <ion-content>
-  <ion-card *ngFor="let prescription of userPrescription" [routerLink]="['/doctolib/ordonnance', prescription.id]">
+  <ion-card *ngFor="let prescription of userPrescription; index as i" [routerLink]="['/doctolib/ordonnance', prescription.id]">
     <ion-card-header>
-      <ion-card-subtitle><em>en cours</em></ion-card-subtitle>
+      <ion-card-subtitle *ngIf="i === 0"><em>en cours</em></ion-card-subtitle>
+      <ion-card-subtitle  *ngIf="i > 0"><em>expiré</em></ion-card-subtitle>
       <ion-card-title>{{prescription.dateCreation | date:'dd-MM-yyyy'}}</ion-card-title>
       <ion-card-subtitle>Délivrée par {{prescription.author}}</ion-card-subtitle>
 
