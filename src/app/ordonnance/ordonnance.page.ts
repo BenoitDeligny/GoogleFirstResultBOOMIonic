@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdonnanceServiceService } from '../shared/services/ordonnance-service.service';
+import { ActivatedRoute } from '@angular/router';
 import { Prescription } from '../shared/models/prescription';
+
 
 @Component({
   selector: 'app-ordonnance',
@@ -9,16 +11,21 @@ import { Prescription } from '../shared/models/prescription';
 })
 export class OrdonnancePage implements OnInit {
 
-  prescriptions: Prescription[] = [];
+  constructor(private prescriptionService: OrdonnanceServiceService, private route: ActivatedRoute) { }
 
-  constructor(private prescriptionService: OrdonnanceServiceService) { }
+  userPrescription: any;
+  id: number;
 
   ngOnInit() {
-    this.prescriptionService.getPrescriptions().subscribe(
-      data => this.prescriptions = data
-    );
-    console.log(this.prescriptions);
+
+    this.prescriptionService.getPrescriptions().subscribe(e => {
+      this.userPrescription = e;
+      console.log(this.userPrescription);
+    });
+
+    this.route.paramMap.subscribe(params => {
+      this.id = parseInt(params.get('id'), 10);
+    });
 
   }
-
 }

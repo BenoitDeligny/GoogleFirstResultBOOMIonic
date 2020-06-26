@@ -12,12 +12,14 @@ export class UserServiceService {
 
   constructor(private http: HttpClient) { }
 
+  getToken() {
+    return localStorage.getItem('token');
+  }
 
-  login(user: User) {
+  login(user: any) {
     return this.http.post(environment.url + '/login', user, { observe: 'response' }).pipe(tap((response) => {
       const token = response.headers.get('Authorization');
       window.localStorage.setItem(token, token);
-
     }));
   }
 }
