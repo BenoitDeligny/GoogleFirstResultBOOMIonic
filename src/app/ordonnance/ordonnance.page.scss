@@ -1,0 +1,21 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    ion-card-subtitle {
+        font-size: 10px;
+    }
+}
+
+.subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ion-datetime {
+        font-size: 15px;
+        margin: 0;
+    }
+}
