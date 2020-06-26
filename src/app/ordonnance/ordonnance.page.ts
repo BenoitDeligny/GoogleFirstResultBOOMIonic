@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdonnanceServiceService } from '../shared/services/ordonnance-service.service';
+import { Prescription } from '../shared/models/prescription';
 
 @Component({
   selector: 'app-ordonnance',
@@ -8,7 +9,7 @@ import { OrdonnanceServiceService } from '../shared/services/ordonnance-service.
 })
 export class OrdonnancePage implements OnInit {
 
-  prescriptions: any[];
+  prescriptions: Prescription[] = [];
 
   constructor(private prescriptionService: OrdonnanceServiceService) { }
 
