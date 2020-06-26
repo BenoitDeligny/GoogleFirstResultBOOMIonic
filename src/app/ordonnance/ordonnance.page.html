@@ -1,33 +1,16 @@
-<ion-header>
-  <app-header>
-  </app-header>
-</ion-header>
-
+<app-header></app-header>
+<ion-toolbar>
+  <ion-title>Ordonnance du {{currentPrescription.dateCreation | date:'dd-MM-yyyy'}}</ion-title>
+</ion-toolbar>
 <ion-content>
-  <ion-card>
-    <div class="title">
-      <ion-card-title>Mon ordonnance</ion-card-title>
-      <div class="subtitle">
-        <ion-card-subtitle><em>Délivré par: Dr Pill le </em></ion-card-subtitle>
-        <ion-datetime displayFormat="DD MM YY" disabled value="1994-12-15"></ion-datetime>
-      </div>
-    </div>
-
-    <div class="drugList" *ngFor="let drugs of prescriptions">
-      <ion-card-subtitle>{{drugs.name}}</ion-card-subtitle>
-
-    </div>
-    <ion-item>
-      <ion-label>Matin</ion-label>
-      <ion-checkbox color="primary" slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Midi</ion-label>
-      <ion-checkbox color="primary" slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Soir</ion-label>
-      <ion-checkbox color="primary" slot="start"></ion-checkbox>
-    </ion-item>
+  <ion-card *ngFor="let drug of currentPrescription.drugs">
+    <ion-list>
+      <ion-list-header>{{drug.name}}</ion-list-header>
+      <ion-item>
+        <ion-label>{{drug.moments}}</ion-label>
+        <ion-checkbox color="primary" slot="start"></ion-checkbox>
+      </ion-item>
+    </ion-list>
   </ion-card>
+
 </ion-content>

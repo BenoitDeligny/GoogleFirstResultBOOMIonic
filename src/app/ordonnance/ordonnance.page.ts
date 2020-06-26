@@ -13,18 +13,17 @@ export class OrdonnancePage implements OnInit {
 
   constructor(private prescriptionService: OrdonnanceServiceService, private route: ActivatedRoute) { }
 
-  userPrescription: any;
+  currentPrescription: Prescription;
   id: number;
 
   ngOnInit() {
 
-    this.prescriptionService.getPrescriptions().subscribe(e => {
-      this.userPrescription = e;
-      console.log(this.userPrescription);
-    });
-
     this.route.paramMap.subscribe(params => {
       this.id = parseInt(params.get('id'), 10);
+    });
+
+    this.prescriptionService.getPrescriptionById(this.id).subscribe(data => {
+      this.currentPrescription = data;
     });
 
   }

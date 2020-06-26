@@ -1,21 +1,18 @@
-.title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    ion-card-subtitle {
-        font-size: 10px;
-    }
+ion-title {
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: var(--ion-color-primary);
+    margin-top: 10px;
 }
 
-.subtitle {
+ion-list-header {
+    font-size: 15px;
+    font-family: 'Roboto';
+    color: var(--ion-color-primary);
+    margin-top: 0px;
+}
+
+.detail {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    ion-datetime {
-        font-size: 15px;
-        margin: 0;
-    }
+    justify-content: flex-end;
 }

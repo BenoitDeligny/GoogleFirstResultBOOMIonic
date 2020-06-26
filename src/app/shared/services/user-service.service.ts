@@ -16,8 +16,8 @@ export class UserServiceService {
     return localStorage.getItem('token');
   }
 
-  login(user: any) {
-    return this.http.post(environment.url + '/login', user, { observe: 'response' }).pipe(tap((response) => {
+  login(user: User) {
+    return this.http.post(environment.DATABASE_URL + '/login', user, { observe: 'response' }).pipe(tap((response) => {
       const token = response.headers.get('Authorization');
       window.localStorage.setItem(token, token);
     }));

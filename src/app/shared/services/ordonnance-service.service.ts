@@ -15,4 +15,8 @@ export class OrdonnanceServiceService {
   getPrescriptions(): Observable<Prescription[]> {
     return this.httpClient.get<Prescription[]>(environment.DATABASE_URL + '/prescriptions');
   }
+
+  getPrescriptionById(id: number): Observable<Prescription> {
+    return this.httpClient.get<Prescription>(environment.DATABASE_URL + `/prescriptions/${id}`);
+  }
 }
