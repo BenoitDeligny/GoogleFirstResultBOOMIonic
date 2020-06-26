@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdonnanceServiceService } from '../shared/services/ordonnance-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { Prescription } from '../shared/models/prescription';
+
 
 @Component({
   selector: 'app-ordonnance',
@@ -19,6 +21,7 @@ export class OrdonnancePage implements OnInit {
       this.userPrescription = e;
       console.log(this.userPrescription);
     });
+
 
     this.route.paramMap.subscribe(params => {
       this.id = parseInt(params.get('id'), 10);

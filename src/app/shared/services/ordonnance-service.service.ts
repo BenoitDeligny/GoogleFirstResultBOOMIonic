@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Prescription } from '../models/prescription';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdonnanceServiceService {
 
-  URL = 'https://bordeaux-gfr-hack.javarover.wilders.dev/prescriptions';
+  constructor(private httpClient: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
-
-  getPrescriptions() {
-    return this.http.get<any[]>(this.URL);
+  getPrescriptions(): Observable<Prescription[]> {
+    return this.httpClient.get<Prescription[]>(environment.DATABASE_URL + '/prescriptions');
   }
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://bordeaux-gfr-hack.javarover.wilders.dev'
+  DATABASE_URL: 'https://bordeaux-gfr-hack.javarover.wilders.dev'
 };
 
 /*
