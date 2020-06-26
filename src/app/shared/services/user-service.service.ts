@@ -11,6 +11,8 @@ import { User } from '../models/user';
 })
 export class UserServiceService {
 
+  currentUser: User;
+
   constructor(private http: HttpClient) { }
 
   getToken() {
@@ -24,7 +26,11 @@ export class UserServiceService {
     }));
   }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(environment.DATABASE_URL + '/users');
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(environment.DATABASE_URL + `/users/${id}`);
   }
+
+  // setUser(){
+  //   this.getUserById()
+  // }
 }

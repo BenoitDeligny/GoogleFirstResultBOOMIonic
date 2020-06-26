@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../shared/services/user-service.service';
 import { User } from '../shared/models/user';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,15 +11,23 @@ import { User } from '../shared/models/user';
 })
 export class ProfilPage implements OnInit {
 
+  id = 1;
   currentUser: User;
 
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(data => {
-      this.currentUser = data;
-      console.log(this.currentUser);
-    });
+    // this.route.paramMap.subscribe(params => {
+    //   this.id = parseInt(params.get('id'), 10);
+    // });
+
+
+
+    this.userService.getUserById(
+      this.id).subscribe(data => {
+        this.currentUser = data;
+        console.log(this.currentUser);
+      });
   }
 
 }
