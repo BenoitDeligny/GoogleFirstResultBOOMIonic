@@ -5,15 +5,18 @@
 
 <ion-content>
   <ion-card>
-    <ion-card-title>Mon ordonnance</ion-card-title>
+    <div class="title">
+      <ion-card-title>Mon ordonnance</ion-card-title>
+      <div class="subtitle">
+        <ion-card-subtitle><em>Délivré par: Dr Pill le </em></ion-card-subtitle>
+        <ion-datetime displayFormat="DD MM YY" disabled value="1994-12-15"></ion-datetime>
+      </div>
+    </div>
 
-    <ion-card-subtitle>Délivré par: Dr White</ion-card-subtitle>
+    <div class="drugList" *ngFor="let drugs of prescriptions">
+      <ion-card-subtitle>{{drugs.name}}</ion-card-subtitle>
 
-    <ion-datetime displayFormat="DD MM YY" disabled value="1994-12-15"></ion-datetime>
-
-    <ion-card-subtitle>Medicament 1</ion-card-subtitle>
-
-    <ion-card-subtitle>Posologie:</ion-card-subtitle>
+    </div>
     <ion-item>
       <ion-label>Matin</ion-label>
       <ion-checkbox color="primary" slot="start"></ion-checkbox>

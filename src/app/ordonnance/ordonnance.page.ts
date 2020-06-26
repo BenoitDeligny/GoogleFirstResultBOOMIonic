@@ -18,7 +18,7 @@ export class OrdonnancePage implements OnInit {
       data => this.prescriptions = data
     );
     console.log(this.prescriptions);
-    
+
   }
 
 }
