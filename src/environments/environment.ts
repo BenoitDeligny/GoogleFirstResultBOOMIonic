@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://192.168.1.77:8080'
+  DATABASE_URL: 'https://bordeaux-gfr-hack.javarover.wilders.dev'
 };
 
 /*

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdonnanceServiceService } from '../shared/services/ordonnance-service.service';
+import { Prescription } from '../shared/models/prescription';
 
 @Component({
   selector: 'app-ordonnance',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdonnancePage implements OnInit {
 
-  constructor() { }
+  prescriptions: Prescription[] = [];
+
+  constructor(private prescriptionService: OrdonnanceServiceService) { }
 
   ngOnInit() {
+    this.prescriptionService.getPrescriptions().subscribe(
+      data => this.prescriptions = data
+    );
+    console.log(this.prescriptions);
+    
   }
 
 }
