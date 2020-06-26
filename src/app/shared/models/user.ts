@@ -10,7 +10,7 @@ export class User {
     password: string;
     prescriptions: Prescription[];
 
-    constructor(user: User) {
+    constructor(user?: User) {
         Object.assign(this, user);
     }
 }

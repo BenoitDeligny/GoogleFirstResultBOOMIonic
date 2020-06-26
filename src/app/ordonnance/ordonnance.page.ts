@@ -30,6 +30,9 @@ export class OrdonnancePage implements OnInit {
     });
 
     this.prescriptionService.getPrescriptionById(this.id).subscribe(data => {
+      for (const drug of data.drugs) {
+        drug.moments.sort();
+      }
       this.currentPrescription = data;
     });
 

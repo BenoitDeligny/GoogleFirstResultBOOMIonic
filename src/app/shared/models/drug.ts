@@ -7,7 +7,7 @@ export class Drug {
     startingDate: Date;
     endingDate: Date;
     takePerDay: number;
-    moments: string;
+    moments: string[];
     prescription: Prescription;
 
     constructor(drug: Drug) {

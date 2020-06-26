@@ -1,0 +1,17 @@
+ion-title {
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: var(--ion-color-primary);
+    margin-top: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-avatar {
+    margin-top: 45px;
+}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user';
+
 import { UserServiceService } from '../../shared/services/user-service.service';
+import { User } from '../../shared/models/user';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private userService: UserServiceService) { }
 
-  user = { username: '', password: '' };
+  user = new User();
 
   ngOnInit() {
   }
