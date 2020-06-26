@@ -6,8 +6,8 @@
   <ion-card *ngFor="let drug of currentPrescription.drugs">
     <ion-list>
       <ion-list-header>{{drug.name}}</ion-list-header>
-      <ion-item>
-        <ion-label>{{drug.moments}}</ion-label>
+      <ion-item *ngFor="let moment of drug.moments">
+        <ion-label>{{moment}}</ion-label>
         <ion-checkbox color="primary" slot="start"></ion-checkbox>
       </ion-item>
     </ion-list>
