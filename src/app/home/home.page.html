@@ -3,26 +3,23 @@
   <ion-title>Mes ordonnances</ion-title>
 </ion-toolbar>
 <ion-content>
-  <ion-card>
+  <ion-card *ngFor="let prescription of userPrescription" [routerLink]="['/doctolib/ordonnance', prescription.id]">
     <ion-card-header>
       <ion-card-subtitle><em>en cours</em></ion-card-subtitle>
-      <ion-card-title>18/06/2020</ion-card-title>
-      <ion-card-subtitle>Délivrée par Dr White</ion-card-subtitle>
+      <ion-card-title>{{prescription.dateCreation | date:'dd-MM-yyyy'}}</ion-card-title>
+      <ion-card-subtitle>Délivrée par {{prescription.author}}</ion-card-subtitle>
 
 
     </ion-card-header>
 
     <ion-card-content>
-      <div>
-        <ul>
-          <li>médicament 1</li>
-          <li>médicament 2</li>
-          <li>médicament 3</li>
-        </ul>
+      <div *ngFor="let drug of prescription.drugs">
+        <p>Médicament : {{drug.name}}</p>
       </div>
-
-      <p>Voir les détails</p>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
+      <div class="detail">
+        <p>Voir les détails</p>
+        <ion-icon class="chevron" name="chevron-forward-outline"></ion-icon>
+      </div>
     </ion-card-content>
   </ion-card>
 

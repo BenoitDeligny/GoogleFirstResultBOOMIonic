@@ -18,13 +18,11 @@ export class LoginPage implements OnInit {
   }
 
   navigateHome() {
-
-
     this.userService.login(this.user).subscribe((response) => {
       console.log(response);
 
     });
-    // this.router.navigate(['/home']);
+    this.router.navigate(['doctolib/home']);
     console.log(this.user);
   }
 

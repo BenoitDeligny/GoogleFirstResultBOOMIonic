@@ -4,11 +4,11 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
-        path: 'ordonnance',
+        path: 'ordonnance/:id',
         loadChildren: () => import('../ordonnance/ordonnance.module').then(m => m.OrdonnancePageModule)
       },
       {

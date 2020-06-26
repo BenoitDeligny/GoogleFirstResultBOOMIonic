@@ -1,0 +1,15 @@
+ion-title {
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: var(--ion-color-primary);
+    margin-top: 10px;
+}
+
+.detail {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chevron {
+    margin-left: 10px;
+}
