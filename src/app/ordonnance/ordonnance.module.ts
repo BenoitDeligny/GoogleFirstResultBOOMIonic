@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IonicModule } from '@ionic/angular';
 
 import { OrdonnancePageRoutingModule } from './ordonnance-routing.module';
@@ -17,6 +17,7 @@ import {HomePageModule} from '../home/home.module';
     OrdonnancePageRoutingModule,
     HomePageModule
   ],
-  declarations: [OrdonnancePage]
+  declarations: [OrdonnancePage],
+  providers: [LocalNotifications]
 })
 export class OrdonnancePageModule {}

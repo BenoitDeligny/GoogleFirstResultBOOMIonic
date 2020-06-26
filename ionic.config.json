@@ -1,7 +1,8 @@
 {
-  "name": "GoogleFirstResultBOOMIonic",
+  "name": "Docto suivi",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
